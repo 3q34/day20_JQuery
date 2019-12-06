@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件绑定</title>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        //JQuery入口函数=window.onload=functiom(){}
+        //区别是window.onload只能定义一次，后者会将前者覆盖
+        $(function () {
+            $("#btn1").click(function () {
+                alert("abc");
+            });
+        });
+    </script>
+</head>
+<body>
+<div id="div1">div1</div>
+<div id="div2">div2</div>
+<input type="button" value="点我" id="btn1">
+</body>
+<script>
+
+    $("#btn1").click(function () {
+        alert("abc");
+    });
+    $("#div1").css("backgroundColor","red");
+</script>
+</html>

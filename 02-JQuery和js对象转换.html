@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义js框架</title>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+<div id="div1">div1</div>
+<div id="div2">div2</div>
+
+</body>
+<script>
+
+    var divs = document.getElementsByTagName("div");
+    alert(divs.length);
+    for (var i = 0; i < divs.length; i++) {
+        // divs[i].innerHTML += "aaa" + i;
+        $(divs[i]).html("ccc");
+    }
+    // alert(divs);
+    var $divs = $("div");
+    $divs.html("bbbb");
+    // alert($divs);
+
+    //js>>jq  $(js对象)
+    // jq>>>js  jq[index]或者jq.get(index)
+   $divs.get(0).innerHTML="dddd";
+
+    $divs.get(1).innerHTML="eeee";
+</script>
+</html>

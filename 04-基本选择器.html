@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>基本选择器</title>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        //JQuery入口函数=window.onload=functiom(){}
+        //区别是window.onload只能定义一次，后者会将前者覆盖
+        $(function () {
+            $("#btn1").click(function () {
+                alert("abc");
+            });
+        });
+    </script>
+</head>
+<body class="">
+<div id="div1">div1</div>
+<div id="div2">div2</div>
+<input type="button" value="点我" id="btn1">
+</body>
+<script>
+$("div");//标签选择器
+$("#div1");//id选择器
+
+
+    $("#btn1").click(function () {
+        alert("abc");
+    });
+    $("#div1").css("backgroundColor","red");
+</script>
+</html>
