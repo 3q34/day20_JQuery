@@ -17,17 +17,22 @@
 </head>
 <body class="">
 <div id="div1">div1</div>
+<input type="button" name="btn" class="hide-icon" value="隐藏">
 <div id="div2">div2</div>
 <input type="button" value="点我" id="btn1">
 </body>
 <script>
-$("div");//标签选择器
-$("#div1");//id选择器
+    $("div");//标签选择器
+    $("#div1");//id选择器
+var iii=$("input")[0];
+    iii.click(function () {
+        alert("hahh");
+    })
 
 
     $("#btn1").click(function () {
         alert("abc");
     });
-    $("#div1").css("backgroundColor","red");
+    $("#div1").css("backgroundColor", "red");
 </script>
 </html>
