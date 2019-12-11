@@ -1,108 +1,113 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
     <title>基本选择器</title>
-    <style type="text/css">
-        body {
-            background-color: darkgray;
-        }
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<script  src="../js/jquery-3.3.1.min.js"></script>
+	<style type="text/css">
+		 	div,span{
+			    width: 180px;
+			    height: 180px;
+			    margin: 20px;
+			    background: #9999CC;
+			    border: #000 1px solid;
+				float:left;
+			    font-size: 17px;
+			    font-family:Roman;
+			}
+			
+			div .mini{
+			    width: 50px;
+			    height: 50px;
+			    background: #CC66FF;
+			    border: #000 1px solid;
+			    font-size: 12px;
+			    font-family:Roman;
+			}
+			
+			div .mini01{
+			    width: 50px;
+			    height: 50px;
+			    background: #CC66FF;
+			    border: #000 1px solid;
+			    font-size: 12px;
+			    font-family:Roman;
+			}
+			
+			
+			
+	 </style>
+	<script type="text/javascript">
+		$(function () {
+            // <input type="button" value="改变 id 为 one 的元素的背景色为 红色"  id="b1"/>
+			$("#b1").click(function () {
+				$("#one").css("backgroundColor","pink");
+            });
 
-        h1 {
-            background-color: #00ff00
-        }
+            // <input type="button" value=" 改变元素名为 <div> 的所有元素的背景色为 红色"  id="b2"/>
+            $("#b2").click(function () {
+                $("div").css("backgroundColor","pink");
+            });
 
-        h2 {
-            background-color: transparent
-        }
+            // <input type="button" value=" 改变 class 为 mini 的所有元素的背景色为 红色"  id="b3"/>
+            $("#b3").click(function () {
+                $(".mini").css("backgroundColor","pink");
+            });
+            // <input type="button" value=" 改变所有的<span>元素和 id 为 two 的元素的背景色为红色"  id="b4"/>
+            $("#b4").click(function () {
+                $("span,#two").css("backgroundColor","pink");
+            });
+        });
 
-        p {
-            background-color: rgb(250, 0, 255)
-        }
+	</script>
+	  <script src="../js/jquery-3.4.1.min.js"></script>
 
-        div {
-            height: 200px;
-            width: 200px;
-            border: 10px;
-            background-color: beige;
-            float: left;
-            margin-left: 50px;
-        }
-        div.one {
-            height: 200px;
-            width: 200px;
-            border: 10px;
-            background-color: gray;
-            float: left;
-            margin-left: 50px;
-        }
-        div.mini {
-            height: 70px;
-            width: 70px;
-            border: 10px;
-            background-color: fuchsia;
-            float: left;
-            margin-left: 50px;
-        }
-        div.mini01 {
-            height: 70px;
-            width: 70px;
-            border: 10px;
-            background-color: fuchsia;
-            float: left;
-            margin-left: 50px;
-        }
-        p.no2 {
-            background-color: gray;
-            padding: 20px;
-        }
-        spanone {
-            background-color: gray;
-            padding: 20px;
-        }
-    </style>
-    <script src="../js/jquery-3.4.1.min.js"></script>
-    <script>
-        $(function () {
-            $("#btn1").click(function () {
-                $("#one").css("backgroundColor", "red");
-            })
-            $("#btn2").click(function () {
-                $("div").css("backgroundColor", "red");
-            })
-            $("#btn3").click(function () {
-                $(".mini").css("backgroundColor", "red");
-            })
-            $("#btn4").click(function () {
-                $("span.spanone,#two").css("backgroundColor", "red");
-            })
+  </head>
+	 
+	<body>
+				
+		 <input type="button" value="保存"  class="mini" name="ok"  class="mini" />
+		 <input type="button" value="改变 id 为 one 的元素的背景色为 红色"  id="b1"/>
+		 <input type="button" value=" 改变元素名为 <div> 的所有元素的背景色为 红色"  id="b2"/>
+		 <input type="button" value=" 改变 class 为 mini 的所有元素的背景色为 红色"  id="b3"/>
+		 <input type="button" value=" 改变所有的<span>元素和 id 为 two 的元素的背景色为红色"  id="b4"/>
+		
+ 
+		 <h1>有一种奇迹叫坚持</h1>
+		 <h2>自信源于努力</h2>
+		 
+	   <div id="one">
+	    	 id为one       
+		 </div>
+		
+		 <div id="two" class="mini" >
+	    	   id为two   class是 mini 
+		       <div  class="mini" >class是 mini</div>
+		 </div>
+		
+		 <div class="one" >
+		 	    class是 one 
+		       <div  class="mini" >class是 mini</div>
+			   <div  class="mini" >class是 mini</div>
+		 </div>
+		 <div class="one" >
+		 	  class是 one 
+		       <div  class="mini01" >class是 mini01</div>
+			   <div  class="mini" >class是 mini</div>
+		</div>
+		
 
+		<span class="spanone">class为spanone的span元素</span>
+		<span class="mini">class为mini的span元素</span>
+		
 
-        })
-    </script>
-</head>
-<body>
-<input value="改变id为one的背景色为red" id="btn1" type="button">
-<input value="改变元素为<div>的背景色为red" id="btn2" type="button">
-<input value="改变class为mini的背景色为red" id="btn3" type="button">
-<input value="改变<span>元素和id为two的背景色为red" id="btn4" type="button"><br>
-<div id="one" class="div">id为one</div>
-<div id="two" class="div">id为two class为div
-    <div class="mini" style="margin: 30px">class是mini</div>
-</div>
-<div id="three" class="one">class为one
-    <div class="mini" style="margin: 20px">class是mini</div>
-    <div class="mini" style="margin: 40px">class是mini</div>
-</div>
-<div id="four" class="one">class是one
-    <div class="mini01" style="margin: 20px">class是mini01</div>
-    <div class="mini" style="margin: 40px">class是mini</div>
-</div>
-<div id="five" class="one">class为spanone的span元素
-    <span class="spanone">span</span>
-</div>
-<div id="six" class="mini">class为mini的span元素
-    <span class="mini">span</span>
-</div>
-</body>
+		<input type="text" value="zhang" id="username" name="username">
+	
+	</body>
+	
+	
+	
 </html>
+
+
+

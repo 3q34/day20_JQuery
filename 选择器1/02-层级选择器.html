@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>层级选择器</title>
+    <script src="../js/jquery-3.4.1.min.js"></script>
+
+    <style>
+        div {
+            height: 200px;
+            width: 200px;
+            border: 10px;
+            background-color: beige;
+            float: left;
+            margin-left: 50px;
+        }
+
+        div.one {
+            height: 200px;
+            width: 200px;
+            border: 10px;
+            background-color: gray;
+            float: left;
+            margin-left: 50px;
+        }
+
+        div.mini {
+            height: 70px;
+            width: 70px;
+            border: 10px;
+            background-color: fuchsia;
+            float: left;
+            margin-left: 50px;
+        }
+    </style>
+    <script>
+        $(function () {
+            $("#btn1").click(function () {
+                $("body div").css("backgroundColor", "red");
+            })
+            $("#btn2").click(function () {
+                $("body>div").css("backgroundColor", "red");
+            })
+        })
+
+    </script>
+
+</head>
+<body>
+<input value="改变 <body> 内所有 <div> 的背景色为红色" type="button" id="btn1">
+<input value="改变 <body> 内子 <div> 的背景色为红色" type="button" id="btn2"><br>
+<div class="div">
+    div
+    <div class="mini" style="margin: 20px">div子div</div>
+    <div class="mini" style="margin: 20px">div子div</div>
+</div>
+<div class="div">
+    div
+    <div class="mini" style="margin: 20px">div子div</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>基本选择器</title>
+    <style type="text/css">
+        body {
+            background-color: darkgray;
+        }
+
+        h1 {
+            background-color: #00ff00
+        }
+
+        h2 {
+            background-color: transparent
+        }
+
+        p {
+            background-color: rgb(250, 0, 255)
+        }
+
+        div {
+            height: 200px;
+            width: 200px;
+            border: 10px;
+            background-color: beige;
+            float: left;
+            margin-left: 50px;
+        }
+        div.one {
+            height: 200px;
+            width: 200px;
+            border: 10px;
+            background-color: gray;
+            float: left;
+            margin-left: 50px;
+        }
+        div.mini {
+            height: 70px;
+            width: 70px;
+            border: 10px;
+            background-color: fuchsia;
+            float: left;
+            margin-left: 50px;
+        }
+        div.mini01 {
+            height: 70px;
+            width: 70px;
+            border: 10px;
+            background-color: fuchsia;
+            float: left;
+            margin-left: 50px;
+        }
+        p.no2 {
+            background-color: gray;
+            padding: 20px;
+        }
+        spanone {
+            background-color: gray;
+            padding: 20px;
+        }
+    </style>
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script>
+        $(function () {
+            $("#btn1").click(function () {
+                $("#one").css("backgroundColor", "red");
+            })
+            $("#btn2").click(function () {
+                $("div").css("backgroundColor", "red");
+            })
+            $("#btn3").click(function () {
+                $(".mini").css("backgroundColor", "red");
+            })
+            $("#btn4").click(function () {
+                $("span.spanone,#two").css("backgroundColor", "red");
+            })
+
+        })
+    </script>
+</head>
+<body>
+<input value="改变id为one的背景色为red" id="btn1" type="button">
+<input value="改变元素为<div>的背景色为red" id="btn2" type="button">
+<input value="改变class为mini的背景色为red" id="btn3" type="button">
+<input value="改变<span>元素和id为two的背景色为red" id="btn4" type="button"><br>
+<div id="one" class="div">id为one</div>
+<div id="two" class="div">id为two class为div
+    <div class="mini" style="margin: 30px">class是mini</div>
+</div>
+<div id="three" class="one">class为one
+    <div class="mini" style="margin: 20px">class是mini</div>
+    <div class="mini" style="margin: 40px">class是mini</div>
+</div>
+<div id="four" class="one">class是one
+    <div class="mini01" style="margin: 20px">class是mini01</div>
+    <div class="mini" style="margin: 40px">class是mini</div>
+</div>
+<div id="five" class="one">class为spanone的span元素
+    <span class="spanone">span</span>
+</div>
+<div id="six" class="mini">class为mini的span元素
+    <span class="mini">span</span>
+</div>
+</body>
+</html>
